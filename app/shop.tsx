@@ -100,7 +100,7 @@ export default function Shop() {
           !loading && (
             <View className='flex-1 items-center justify-center py-20'>
               <Text className='text-secondary'>
-                No Products Found
+                No Products Found.
               </Text>
             </View>
           )
