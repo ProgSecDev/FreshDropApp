@@ -14,7 +14,7 @@ export default function Profile() {
   const router = useRouter()
 
   const handleLogout = async () => {
-    router.replace("/sign-in")
+    router.replace("/auth/sign-in")
   }
 
   return (
@@ -33,7 +33,7 @@ export default function Profile() {
                   Login to view your profile, orders, and addresses.
                 </Text>
                 <TouchableOpacity 
-                onPress={()=> router.push('/sign-in')}
+                onPress={()=> router.push('/auth/sign-in')}
                 className='bg-primary w-3/5 py-3 rounded-full items-center shadow-lg'>
                   <Text className='text-white font-bold text-lg'>Login / Sign Up</Text>
                 </TouchableOpacity>
@@ -68,8 +68,8 @@ export default function Profile() {
                 <View className='bg-white rounded-xl border border-gray-100/75 p-2 mb-4'>
                    {PROFILE_MENU.map((item, index)=> (
                     <TouchableOpacity key={item.id}
-                      className={`flex-row items-center p-4 ${index} !== PROFILE_MENU.length - 1 ? 
-                      "border-b border-gray-100" : ""}`}
+                      className={`flex-row items-center p-4 ${index !== PROFILE_MENU.length - 1 ? 
+                      "border-b border-gray-100" : ''}`}
                       onPress={()=> router.push(item.route as any)}
                     >
                       <View className='w-10 h-10 bg-surface rounded-full items-center justify-center mr-4'>
